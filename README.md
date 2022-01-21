@@ -1,6 +1,6 @@
-## Website Mirror with Cache
+## Website Mirror with Cache ([GitHub](https://github.com/guyskk/website-mirror))
 
-Run mirror with cache for any website, useful for packaging mirrors.
+Run mirror with cache for any website, useful for packaging registry, eg: PyPI, NPM.
 
 Docker Image: `guyskk/website-mirror:latest`  
 Volume Path: `/data`  

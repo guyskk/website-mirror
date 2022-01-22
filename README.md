@@ -22,7 +22,7 @@ docker run -d \
     --cpus=0.5 \
     -p 127.0.0.1:8001:80 \
     -v pypi-mirror-volume:/data \
-    guyskk/pypi-mirror:latest
+    guyskk/pypi-mirror:latest-amd64
 docker logs --tail 100 -f pypi-mirror
 ```
 
@@ -43,7 +43,7 @@ docker run -d \
     --cpus=0.5 \
     -p 127.0.0.1:8002:80 \
     -v npm-mirror-volume:/data \
-    guyskk/npm-mirror:latest
+    guyskk/npm-mirror:latest-amd64
 docker logs --tail 100 -f npm-mirror
 ```
 

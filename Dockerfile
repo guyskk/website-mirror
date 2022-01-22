@@ -6,5 +6,6 @@ RUN chmod +x /usr/local/bin/envsub-njs && \
         > /docker-entrypoint.d/01-envsub-njs-nginx.sh && \
     chmod +x /docker-entrypoint.d/01-envsub-njs-nginx.sh
 
-COPY nginx.conf /etc/nginx/nginx.conf
+ARG NGINX_CONF
+COPY ${NGINX_CONF} /etc/nginx/nginx.conf
 VOLUME [ "/data" ]

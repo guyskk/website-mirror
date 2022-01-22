@@ -2,13 +2,13 @@
 
 set -e
 
-echo "*** Publish guyskk/website-mirror:latest ***"
-docker push guyskk/website-mirror:latest-amd64
-docker push guyskk/website-mirror:latest-arm64
+echo "*** Publish guyskk/pypi-mirror:latest ***"
+docker push guyskk/pypi-mirror:latest-amd64
+docker push guyskk/pypi-mirror:latest-arm64
 
-echo "*** Create manifest guyskk/website-mirror:latest ***"
-docker manifest create guyskk/website-mirror:latest \
-    --amend guyskk/website-mirror:latest-arm64 \
-    --amend guyskk/website-mirror:latest-amd64
+echo "*** Create manifest guyskk/pypi-mirror:latest ***"
+docker manifest create guyskk/pypi-mirror:latest \
+    --amend guyskk/pypi-mirror:latest-arm64 \
+    --amend guyskk/pypi-mirror:latest-amd64
 
-docker manifest push guyskk/website-mirror:latest
+docker manifest push guyskk/pypi-mirror:latest

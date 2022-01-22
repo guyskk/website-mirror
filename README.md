@@ -2,14 +2,8 @@
 
 Run mirror with cache for any website, useful for packaging registry, eg: PyPI, NPM.
 
-Docker Image: `guyskk/website-mirror:latest`  
-Volume Path: `/data`  
-HTTP Port: `80`  
-
 | Environment variable | Default value | description |
 | -------------------- | ------------- | ----------- |
-| PROXY_URL   | `https://www.nginx.com`  | Proxy website url |
-| PROXY_HOST  | `www.nginx.com`          | Proxy website host |
 | CACHE_MAX_SIZE       | `10g` (10 GB)   | Cache storage size |
 | CACHE_INACTIVE       | `180d` (180 days) | Cached data will removed when inactive |
 | CACHE_KEYS_ZONE_SIZE | `50m` (50 MB)     | Nginx keys_zone, 1MB zone can store about 8K keys |
@@ -28,9 +22,7 @@ docker run -d \
     --cpus=0.5 \
     -p 127.0.0.1:8001:80 \
     -v pypi-mirror-volume:/data \
-    -e PROXY_URL=https://pypi.org \
-    -e PROXY_HOST=pypi.org \
-    guyskk/website-mirror:latest
+    guyskk/pypi-mirror:latest
 docker logs --tail 100 -f pypi-mirror
 ```
 
@@ -51,9 +43,7 @@ docker run -d \
     --cpus=0.5 \
     -p 127.0.0.1:8002:80 \
     -v npm-mirror-volume:/data \
-    -e PROXY_URL=https://registry.npmjs.com \
-    -e PROXY_HOST=registry.npmjs.com \
-    guyskk/website-mirror:latest
+    guyskk/npm-mirror:latest
 docker logs --tail 100 -f npm-mirror
 ```
 
@@ -65,3 +55,4 @@ npm install lodash --registry=http://127.0.0.1:8002
 
 - https://docs.nginx.com/nginx/admin-guide/content-cache/content-caching/
 - https://github.com/guyskk/envsub-njs
+- https://github.com/ossobv/pypi-nginx-cache

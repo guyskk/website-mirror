@@ -8,6 +8,8 @@ Run mirror with cache for any website, useful for packaging registry, eg: PyPI, 
 | CACHE_INACTIVE       | `180d` (180 days) | Cached data will removed when inactive |
 | CACHE_KEYS_ZONE_SIZE | `50m` (50 MB)     | Nginx keys_zone, 1MB zone can store about 8K keys |
 | CACHE_VALID | `10m` (10 minutes) | Unconditional cache time, will fallback to HTTP cache-control / ETags when expired |
+| PEER_MIRROR_URL | `https://pypi.doubanio.com` or `https://registry.npmmirror.com` | Peer mirror url, request will first try peer then fallback to official registry |
+| PEER_MIRROR_HOST | `pypi.doubanio.com` or `registry.npmmirror.com` | Peer mirror host |
 
 ### Usage: PyPI mirror
 
